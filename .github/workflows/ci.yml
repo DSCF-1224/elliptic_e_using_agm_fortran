@@ -44,3 +44,23 @@ jobs:
           name: src-f90
           path: src/*.f90
           retention-days: 1
+
+  test:
+
+    needs: fypp
+
+    timeout-minutes: 10
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        profile: [debug, release]
+      fail-fast: false
+
+    steps:
+
+      - name: Install fpm
+        uses: fortran-lang/setup-fpm@v8
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}

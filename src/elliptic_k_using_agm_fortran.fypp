@@ -1,0 +1,4 @@
+#:set INTERFACE_NAME = 'elliptic_e'
+#:set MODULE_NAME = INTERFACE_NAME + '_using_agm_fortran'
+module ${MODULE_NAME}$
+end module ${MODULE_NAME}$
